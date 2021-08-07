@@ -9,6 +9,7 @@ node {
        try{
          //执行部署任务
          echo 'I am try to do the code deployment'
+	 echo 'vito hong'
        }
        catch(error){
          //捕捉错误并通知用户

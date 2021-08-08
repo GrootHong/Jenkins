@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    def username = 'Vito Hong'
     stages {
         stage('Test') {
             steps {
@@ -8,7 +8,7 @@ pipeline {
                 * 使用 `true` 允许流水线继续进行
                 */
                 sh 'make check || true' 
-                junit '**/target/*.xml' 
+                echo "Hello Mr. ${username}"
             }
         }
     }

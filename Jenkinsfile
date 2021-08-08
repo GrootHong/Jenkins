@@ -11,12 +11,12 @@ pipeline {
                 echo "Hello Mr. ${username}"
             }
         }
-    }
-stages {
-        stage('Example') {
+stage('Example') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
     }
+        
+    
 }

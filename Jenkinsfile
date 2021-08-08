@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    def username = 'Vito Hong'
     stages {
         stage('Test') {
             steps {
@@ -8,7 +7,15 @@ pipeline {
                 * 使用 `true` 允许流水线继续进行
                 */
                 sh 'make check || true' 
+	def username = 'Vito Hong'
                 echo "Hello Mr. ${username}"
+            }
+        }
+    }
+stages {
+        stage('Example') {
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
     }

@@ -1,3 +1,5 @@
+#!/bin/groovy
+## test git push 
 node {
     stage('Build'){
       echo 'I am doing the build!'

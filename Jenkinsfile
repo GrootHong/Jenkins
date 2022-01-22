@@ -1,8 +1,9 @@
-pipeline {
-    agent any
-environment { 
-       username = 'Vito Hong'
-    }
+
+#!/bin/groovy
+## test git push 
+node {
+    stage('Build'){
+      echo 'I am doing the build!'
     stages {
         stage('Test') {
             steps {

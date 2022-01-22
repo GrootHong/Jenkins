@@ -1,20 +1,28 @@
+
 #!/bin/groovy
 ## test git push 
 node {
     stage('Build'){
       echo 'I am doing the build!'
+    stages {
+        stage('Test') {
+            steps {
+                /* `make check` 在测试失败后返回非零的退出码；
+                * 使用 `true` 允许流水线继续进行
+                */
+                sh 'make check || true' 
+                echo "Hello Mr. ${username}"
+            }
+        }
+stage('Example') {
+            environment { 
+                DEBUG_FLAGS = '-g'
+            }
+            steps {
+                sh 'printenv'
+            }
+        }
     }
-    stage('Test'){
-      echo 'I am doing the Test'
-    }
-    stage('Deploy'){
-       try{
-         //执行部署任务
-         echo 'I am try to do the code deployment'
-	 echo 'vito hong'
-       }
-       catch(error){
-         //捕捉错误并通知用户
-       }
-    }
+        
+    
 }
